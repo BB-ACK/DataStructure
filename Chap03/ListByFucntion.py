@@ -44,5 +44,5 @@ if __name__ == "__main__":
     insert(1, 'C')
     print(array[0:size])
 
-    print("[%c] is deleted." % delete(2))
+    print("[%c] is deleted." % delete(1))
     print(array[0:size])

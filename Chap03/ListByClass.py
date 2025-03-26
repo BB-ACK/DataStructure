@@ -23,7 +23,6 @@ class ArrayList:
 
     # 배열의 값을 삭제하는 함수
     def delete(self, pos):
-        global size
         if not self.isEmpty() and 0 <= pos < self.size:
             e = self.array[pos]
             for i in range(pos, self.size-1):
