@@ -26,7 +26,7 @@ class ArrayList:
         if not self.isEmpty() and 0 <= pos < self.size:
             e = self.array[pos]
             for i in range(pos, self.size-1):
-                self.array[i] = self.array[i-1]
+                self.array[i] = self.array[i+1]
             self.size -= 1
             return e
         else:

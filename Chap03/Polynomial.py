@@ -32,3 +32,4 @@ if __name__ == '__main__':
 # from ArrayList import ArrayList
 # 다시 시작하면 라인 에디터에서는 0부터 시작 
 # 로드를 하게 되면 기전의 텍스트 불러오기
+# 보고서면 보고서답게 제출해라라
