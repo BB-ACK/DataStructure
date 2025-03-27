@@ -17,19 +17,44 @@ class Poly:
             print('%dx^%d + ' % (self.coef[i], i), end ='')
         print(self.coef[0])
 
+    def add(self, polyB):
+        polyC = Poly()
+        # 더 높은 차수로 설정정
+        if self.degree >= polyB.degree:
+            polyC.degree = self.degree
+        else:
+            polyC.degree = polyB.degree
+        
+        for i in range(polyC.degree, -1, -1):
+            # 다항식마다 차수가 다르므로 조건문 제어어
+            if self.coef[i] == None:
+                polyC.coef[i] = polyB.coef[i]
+            elif polyB.coef[i] == None:
+                polyC.coef[i] = self.coef[i]
+            else:
+                polyC.coef[i] = self.coef[i] + polyB.coef[i]
+
+        return polyC
+    
+    def eval(self, scalar):
+        sum = 0
+        mul = 1
+
+        for i in range(self.degree+1):
+            sum += self.coef[i] * mul
+            mul *= scalar
+        
+        return sum
+    
 if __name__ == '__main__':
     a = Poly()
     a.readPoly()
     a.printPoly()
-    
-    #a.add()
 
-# 과제 설명
-# 1. 이 코드에서 add, 임의의 x값을 전달해서 결과 값을 출력하는 것
-# 2. 교제 3.4 라인편집기
-# 명령 i d r p l s 구현 -> 파일 입출력도 필요한듯? text.html
-# 입력, 삭제, 변경, 출력, 읽기, 저장, 종료
-# from ArrayList import ArrayList
-# 다시 시작하면 라인 에디터에서는 0부터 시작 
-# 로드를 하게 되면 기전의 텍스트 불러오기
-# 보고서면 보고서답게 제출해라라
+    b = Poly()
+    b.readPoly()
+    b.printPoly()
+
+    c = a.add(b)
+    c.printPoly()
+    print("C(2) =", c.eval(2))
