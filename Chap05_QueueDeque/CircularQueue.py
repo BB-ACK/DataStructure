@@ -28,11 +28,16 @@ class CircularQueue:
         else:
             print("Underflow")
 
+    # 맨 앞의 요소를 반환
     def peek(self):
         if not self.isEmpty():
             return self.array[(self.front + 1) % self.capacity]
         else:
             print("Underflow")
+
+    # 원소의 개수를 반환
+    def size(self):
+        return (self.rear - self.front + self.capacity) % self.capacity
 
     # 현재 큐를 출력
     def display(self):
