@@ -44,3 +44,11 @@ class LinkedStack():
             arr.append(node.elem)
             node = node.link
         return str(arr)
+    
+if __name__ == "__main__":
+    ls = LinkedStack()
+
+    ls.push(1)
+    ls.push(2)
+    ls.push(3)
+    print(ls)
