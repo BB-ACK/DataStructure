@@ -17,7 +17,7 @@ class DListType():
     def isEmpty(self):
         return self.size == 0
 
-    def inseert(self, pos, data):
+    def insert(self, pos, data):
         if pos <= 0 or pos > self.size + 1:
             print("Invalid")
             return
@@ -66,9 +66,9 @@ class DListType():
 if __name__ == "__main__":
     DL = DListType()
 
-    DL.inseert(1, 'A'); DL.printList()
-    DL.inseert(1, 'B'); DL.printList()
-    DL.inseert(2, 'C'); DL.printList()
-    DL.inseert(4, 'D'); DL.printList()
+    DL.insert(1, 'A'); DL.printList()
+    DL.insert(1, 'B'); DL.printList()
+    DL.insert(2, 'C'); DL.printList()
+    DL.insert(4, 'D'); DL.printList()
 
     print("[%s] is deleted." % DL.delete(3)); DL.printList()
