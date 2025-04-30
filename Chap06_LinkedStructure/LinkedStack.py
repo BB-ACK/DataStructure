@@ -22,7 +22,7 @@ class LinkedStack():
     def pop(self):
         if not self.isEmpty():
             n = self.top # 제일 위를 가리킴
-            self.top = n # top이 제일 위의 다음을 가리킴
+            self.top = n.link # top이 제일 위의 다음을 가리킴
             return n.elem # 제일 위의 데이터를 반환
     
     def peek(self):
