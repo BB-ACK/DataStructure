@@ -82,6 +82,61 @@ class SortedArraySet:
             j += 1
 
         return setC
+    
+    # 차집합
+    def difference(self, setB):
+        setC = SortedArraySet()
+        i = 0
+        j = 0
+
+        while i < self.size and j < setB.size:
+            a = self.array[i]
+            b = setB.array[j]
+
+            if a == b:
+                i += 1; j += 1
+            elif a < b:
+                setC.append(a)
+                i += 1
+            else:
+                j += 1
+        
+        while i < self.size:
+            setC.append(self.array[i])
+            i += 1
+        
+        return setC
+    
+    # 교집합
+    def intersection(self, setB):
+        setC = SortedArraySet()
+        i = 0
+        j = 0
+
+        while i < self.size and j < setB.size:
+            a = self.array[i]
+            b = setB.array[j]
+
+            if a == b:
+                setC.append(a)
+                i += 1; j += 1
+            elif a < b:
+                i += 1
+            else:
+                j += 1
+
+        return setC
+
+    # 두 집합이 같은 지 확인
+    def isEqual(self, setB):
+        if self.size != setB.size:
+            return False
+        
+        for i in range(self.size):
+            if self.array[i] != setB.array[i]:
+                return False
+        
+        return True
 
 if __name__ == "__main__":
     import random
