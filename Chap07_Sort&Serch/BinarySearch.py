@@ -26,6 +26,21 @@ def iBinaraySearch(A, Key):
 
     return -1
 
+# 재귀를 통한 이진 탐색
+def rBinarySearch(A, key, low, high):
+    if low <= high:
+        middle = (low + high) // 2
+        
+        if key == A[middle]:
+            return middle
+        elif key < A[middle]:
+            return rBinarySearch(A, key, low, middle-1)
+        else:
+            return rBinarySearch(A, key, middle+1, high)
+    
+    return -1
+
+
 # 이진 탐색을 위한 삽입정렬
 def insertionSort(A):
     n = len(A)
@@ -50,7 +65,8 @@ if __name__ == "__main__":
 
     key = int(input('Input Search Key : '))
     # idx = seqSearch(A, key)
-    idx = iBinaraySearch(A, key)
+    # idx = iBinaraySearch(A, key)
+    idx = rBinarySearch(A, key, 0, 14)
 
 
     print()
