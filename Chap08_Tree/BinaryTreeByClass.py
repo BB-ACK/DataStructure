@@ -54,6 +54,13 @@ class BTree:
                 Q.put(root.right)
         print()
 
+    def treeReverse(self, root):
+        if root != None:
+            root.left, root.right = root.right, root.left
+
+            self.treeReverse(root.left)
+            self.treeReverse(root.right)
+
     # 이진트리 노드 수 계산
     def countNode(self, root):
         if root is None:
@@ -101,6 +108,8 @@ if __name__ == "__main__":
     BT.postOrder(root)
     print('\n Level-Order : ', end='')
     BT.levelOrder(root)
+    print('\nTree-Reverse : ', end='')
+    BT.treeReverse(root)
 
 
     print()
