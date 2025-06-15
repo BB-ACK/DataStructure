@@ -49,7 +49,7 @@ def delete(root, key):
     else:
         # case 1: 단말노드이거나 오른쪽 자식만 있는 경우 -> 왼쪽 자식이 없음음
         if root.left == None:
-            return root.left # 해당 노드가 none으로 바뀐채 리턴됨
+            return root.right # 해당 오른쪽 노드로 바뀐채 리턴됨
         
         # case 2: 자식노드가 하나인 경우 -> 왼쪽 자식만 존재
         elif root.right == None:
